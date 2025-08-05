@@ -1,0 +1,22 @@
+
+defaults:
+  - base_config
+  - override modules/light: static_on
+  - _self_
+
+modules:
+    heartbeat:
+      led_pin: GPIO21
+    camera: null
+
+    fan:
+      timeline:
+        - ${schedule:10000000,0.2}
+
+hydra:
+  job_logging:
+    handlers:
+      console:
+        level: DEBUG
+    root:
+      level: DEBUG

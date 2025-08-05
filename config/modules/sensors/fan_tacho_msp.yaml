@@ -1,0 +1,4 @@
+fan_tacho_msp:
+  _target_: modules.sensors.fan_tacho.FanTachoMSPModule
+  msp_address: 0x24
+  update_frequency: 10

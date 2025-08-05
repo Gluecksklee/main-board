@@ -1,0 +1,10 @@
+env1:
+  _target_: modules.sensors.bme680.BME680Module
+  i2c_address: ${hex:0x77}
+  update_frequency: 10
+  calibration_file: /calibration/bme1.json
+env2:
+  _target_: modules.sensors.bme680.BME680Module
+  i2c_address: ${hex:0x76}
+  update_frequency: 10
+  calibration_file: /calibration/bme2.json

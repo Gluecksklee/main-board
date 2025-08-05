@@ -1,0 +1,25 @@
+
+defaults:
+  - base_config
+  - modules:
+      - timeouttest
+  - override modules/light: development
+  - override modules/fan: development
+  - _self_
+
+modules:
+    heartbeat:
+      led_pin: GPIO21
+
+update_timeout: 5
+
+
+
+
+hydra:
+  job_logging:
+    handlers:
+      console:
+        level: DEBUG
+    root:
+      level: DEBUG

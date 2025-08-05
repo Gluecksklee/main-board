@@ -1,0 +1,12 @@
+[Unit]
+Description=Mainboard Software for Gluecksklee
+
+
+[Service]
+Type=simple
+ExecStart=/root/main-board/src/main.py
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

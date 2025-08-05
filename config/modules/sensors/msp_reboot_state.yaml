@@ -1,0 +1,4 @@
+reboot_logger:
+  _target_: modules.sensors.msp.RebootLogger
+  msp_address: ${hex:0x24}
+  update_frequency: 30

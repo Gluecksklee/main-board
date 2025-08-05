@@ -1,0 +1,5 @@
+url: 'postgresql+psycopg2://${__user}:${__password}@${__host}/${__db_name}'
+__user: null
+__password: null
+__host: null
+__db_name: null

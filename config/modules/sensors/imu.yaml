@@ -1,0 +1,9 @@
+imu:
+  _target_: modules.sensors.imu.IMUModule
+  i2c_address: ${hex:0x69}
+  update_frequency: 1
+  calibration_file: /calibration/imu.json
+  imu_motion_threshold: 1.5
+
+#  interrupt_pin: GPIO20
+#  fsync_pin: GPIO26

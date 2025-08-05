@@ -1,0 +1,10 @@
+update_frequency: 1
+timeline:
+  - ${schedule:10, 1}
+  - ${schedule:2, 0.75}
+  - ${schedule:2, 0.5}
+  - ${schedule:2, 0.25}
+  - ${schedule:2, 0.0}
+  - ${schedule:2, 0.25}
+  - ${schedule:2, 0.5}
+  - ${schedule:2, 0.75}

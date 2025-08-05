@@ -1,0 +1,3 @@
+update_frequency: 3600
+timeline:
+  - ${schedule:57600, 0}  # 3600*16

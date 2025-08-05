@@ -1,0 +1,2 @@
+url: sqlite:///${.__path}
+__path: /root/data/db.sqlite

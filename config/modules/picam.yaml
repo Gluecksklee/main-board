@@ -1,0 +1,30 @@
+# https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf
+camera:
+  _target_: modules.camera.CameraModule
+  cycle_delay: ${...cycle_delay}  # Inherit from main module
+  update_frequency: 900  # Seconds -> 15 minutes
+  min_video_duration: 15  # Seconds the video will run
+  imu_threshold: 15  # trigger for when a video should be done
+
+  # Camera settings
+#  image_resolution: ${tuple:640, 480}  # ArduCam, PiCam v2
+#  image_resolution: ${tuple:1280, 720}  # ArduCam
+#  image_resolution: ${tuple:2560, 1440}  # ArduCam
+#  image_resolution: ${tuple:3840, 2160}  # ArduCam
+#  image_resolution: ${tuple:4656, 3496}  # ArduCam
+#  image_resolution: ${tuple:1640, 1232}  # PiCam v2
+#  image_resolution: ${tuple:1920, 1080}  # PiCam v2
+  image_resolution: ${tuple:3280, 2464}  # PiCam v2
+  video_resolution: ${tuple:2028, 1080}  # PiCam v2
+  transform:
+    _target_: libcamera.Transform
+    hflip: true
+    vflip: true
+  controls:
+    Brightness: 0  # Range from -1 (dark) to 1 (bright),
+    Contrast: 1  # 0 = No contrast, 1=normal, >1= more contrast
+    Saturation: 1  # 0 = Greyscale, 1=normal, >1= more saturation
+    Sharpness: 1  # 0 = No sharpening, 1=normal, >1= more sharpening range (0 - 16.0)
+    # "ExposureTime": # in microseconds
+  analyze_images: true
+  camera_start_delay: 1

@@ -1,0 +1,9 @@
+defaults:
+  - _self_
+  - fan: experiment
+
+fan:
+  _target_: modules.fan.FanControllerModule
+  pwm_pin: GPIO12
+  pwm_frequency: 20000
+  timeline: null

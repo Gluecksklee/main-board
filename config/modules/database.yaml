@@ -1,0 +1,12 @@
+defaults:
+  - _self_
+  - database/engine: sqlite
+
+database:
+  _target_: modules.logger.database.DatabaseModule
+  engine:
+    _target_: utils.hydra.create_database_engine
+    url: null  # Define in defaults
+  update_frequency: 30
+  media_folder: null
+  db_path: /root/data/db.sqlite  # Required for deleting database

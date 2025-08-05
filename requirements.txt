@@ -1,0 +1,6 @@
+opencv-python
+numpy
+bme680
+hydra-core
+colorlog
+sqlmodel

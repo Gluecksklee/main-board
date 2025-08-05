@@ -1,0 +1,9 @@
+
+defaults:
+  - base_config
+
+modules:
+  sensors:
+    sensors:
+      fan:
+        tacho_pin: GPIO06

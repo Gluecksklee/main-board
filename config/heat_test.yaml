@@ -1,0 +1,21 @@
+
+defaults:
+  - base_config
+  - override modules/light: static_on
+  - override modules/fan: static_off
+  - _self_
+
+
+modules:
+    heartbeat:
+      led_pin: GPIO21
+      update_frequency: 1
+
+
+hydra:
+  job_logging:
+    handlers:
+      console:
+        level: DEBUG
+    root:
+      level: DEBUG

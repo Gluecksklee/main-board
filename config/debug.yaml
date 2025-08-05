@@ -1,0 +1,24 @@
+
+defaults:
+  - base_config
+#  - override modules/light: development
+#  - override modules/fan: development
+  - modules:
+      - tcp_logging
+  - _self_
+
+modules:
+  heartbeat:
+    led_pin: GPIO21
+  database:
+    media_folder: media
+  camera:
+    update_frequency: 60
+
+hydra:
+  job_logging:
+    handlers:
+      console:
+        level: DEBUG
+    root:
+      level: DEBUG

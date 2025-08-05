@@ -1,0 +1,7 @@
+co2:
+  _target_: modules.sensors.co2.CO2Module
+  i2c_address: ${hex:0x5E}
+  update_frequency: 10
+
+#  co2_enable_pin: GPIO04
+#  co2_ready_pin: GPIO17

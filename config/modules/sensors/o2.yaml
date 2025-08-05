@@ -1,0 +1,7 @@
+o2:
+  _target_: modules.sensors.o2.O2Module
+  msp_address: ${hex:0x24}
+  update_frequency: 10
+  uart_buffer_size: 13
+  await_uart_timeout: 5
+  uart_ready_delay: 0.1

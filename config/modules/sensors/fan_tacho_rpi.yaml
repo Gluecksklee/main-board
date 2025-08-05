@@ -1,0 +1,4 @@
+fan_tacho_rpi:
+  _target_: modules.sensors.fan_tacho.FanTachoRPIModule
+  tacho_pin: GPIO06
+  update_frequency: 10

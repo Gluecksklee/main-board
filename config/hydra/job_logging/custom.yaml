@@ -1,0 +1,32 @@
+version: 1
+formatters:
+  simple:
+    format: '[%(asctime)s] [%(levelname)-8s] [%(name)s] - %(message)s'
+  colored:
+    '()': 'colorlog.ColoredFormatter'
+    format: '[%(cyan)s%(asctime)s%(reset)s] [%(log_color)s%(levelname)-8s%(reset)s] [%(cyan)s%(name)s%(reset)s] - %(log_color)s%(message)s%(reset)s'
+    log_colors:
+      DEBUG: green
+      INFO: reset
+      WARNING: bold_yellow
+      ERROR: bold_red
+      CRITICAL: red,bg_white
+  csv:
+    format: '%(asctime)s,%(levelname)s,"%(name)s","%(message)s"'
+handlers:
+  file:
+    class: logging.FileHandler
+    mode: w
+    formatter: csv
+    # relative to the job log directory
+    filename: /root/logs/hydra-${hydra.job.name}-${now:%Y%m%d-%H%M%S}.log
+    delay: true
+    level: INFO
+  console:
+    class: logging.StreamHandler
+    formatter: colored
+    stream: ext://sys.stdout
+    level: INFO
+root:
+  level: INFO
+  handlers: [ file, console ]

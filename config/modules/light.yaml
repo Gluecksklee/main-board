@@ -1,0 +1,11 @@
+defaults:
+  - _self_
+  - light: experiment
+
+light:
+  _target_: modules.light.LightModule
+  timeline: null  # Set with defaults
+
+  enable_pin: GPIO16
+  pwm_pin: GPIO13
+  pwm_frequency: 20000

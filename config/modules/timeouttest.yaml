@@ -1,0 +1,4 @@
+timeouttest:
+  _target_: modules.tests.TimeoutTest
+  update_frequency: 1
+  timeout: 60

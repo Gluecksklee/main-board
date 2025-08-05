@@ -1,0 +1,7 @@
+
+defaults:
+  - base_config
+
+modules:
+    fan_tacho:
+      tacho_pin: GPIO18

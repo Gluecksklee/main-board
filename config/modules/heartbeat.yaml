@@ -1,0 +1,6 @@
+heartbeat:
+  _target_: modules.heartbeat.HeartbeatModule
+  led_pin: null
+  heartbeat_pin: GPIO27
+  debug_led_enable: GPIO05
+  update_frequency: 1

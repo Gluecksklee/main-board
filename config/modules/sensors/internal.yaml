@@ -1,0 +1,3 @@
+internal:
+  _target_: modules.sensors.internal.RPiTelemetryModule
+  update_frequency: 10

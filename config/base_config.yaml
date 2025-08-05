@@ -1,0 +1,35 @@
+defaults:
+  - _self_
+  - modules/sensors@modules:
+      - bme680
+      - co2
+      - o2
+      - internal
+      - fan_tacho_msp
+      - msp_reboot_state
+      - imu
+  - modules:
+    - picam
+    - fan
+    - light
+    - database
+    - spacetango_comm
+    - heartbeat
+  - override hydra/job_logging: custom
+
+_target_: config.HydraConfig.from_hydra
+cycle_delay: 0.1  # Small delay preventing cpu from unnecessary overusing
+update_timeout: 60  # Seconds for timeout. Has to be integer!
+multi_threading: false
+data_location: ${path:/root/data/}
+
+smbus:
+  _target_: smbus.SMBus
+  bus: 1
+
+pin_factory:
+  _target_: gpiozero.pins.rpigpio.RPiGPIOFactory
+
+modules:
+  _target_: utils.hydra.build_modules_list
+

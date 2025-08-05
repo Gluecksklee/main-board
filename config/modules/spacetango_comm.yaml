@@ -1,0 +1,12 @@
+tango:
+   _target_: modules.logger.spacetango_logger.SpaceTangoLogger
+   update_frequency: 10  # Seconds
+   host: /dev/ttyAMA0
+   baudrate: 115200
+   maximum_packet_size: 400  # Byte
+   minimum_packet_delay: 5  # Seconds
+   media_path: /download
+   time_quantization: 10  # Seconds
+   data_timeout: 300  # Seconds
+   serial_timeout: 5  # Seconds
+   telecomando_directory: /upload
